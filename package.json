@@ -1,0 +1,25 @@
+{
+  "author": "Peter T Bosse II <ptb@ioutime.com> (http://ptb2.me)",
+  "bugs": {
+    "url": "https://github.com/riot/hmr/issues"
+  },
+  "dependencies": {
+    "riot": "^3.0.5"
+  },
+  "description": "Riot Hot Module Replacement",
+  "devDependencies": {
+    "browser-sync": "^2.18.5"
+  },
+  "homepage": "https://github.com/riot/hmr#readme",
+  "license": "MIT",
+  "main": "bs-plugin.js",
+  "name": "riot-hmr",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/riot/hmr.git"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "version": "1.0.0"
+}
