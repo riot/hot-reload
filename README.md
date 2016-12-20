@@ -10,4 +10,4 @@ Watch Riot tag files, when changed: compile and update live
 
 ## Run
 
-* `npm start`
+* `riot -w *.tag & npm start`
