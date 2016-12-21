@@ -1,14 +1,22 @@
-const browserSync = require("browser-sync").create()
-const riotHmr = require("./bs-plugin.js")
+var browserSync = require("browser-sync").create()
+var riotHotReload = require("./bs-plugin.js")
 
 browserSync.init({
-  "server": ".",
   "plugins": [
     {
-      "module": riotHmr,
+      "module": riotHotReload,
       "options": {
         "files": "*.js"
       }
     }
-  ]
+  ],
+  "server": {
+    "baseDir": ".",
+    "index": "index.xhtml"
+  },
+  "snippetOptions": {
+    "rule": {
+      "match": /qqq/
+    }
+  }
 })

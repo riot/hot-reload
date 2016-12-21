@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Riot Hot Reload</title>
+  </head>
+  <body>
+    <example-tag></example-tag>
+    <div data-is="example-tag"></div>
+    <!-- `riot -w *.tag` for development and tags will retain state -->
+    <!-- -->
+      <script src="node_modules/riot/riot.min.js"></script>
+      <script src="riot-hot-reload.js"></script>
+      <script src="example-tag.js"></script>
+      <script>
+        /*<![CDATA[*/
+        riot.observable(riotHotReload)
+        riot.util.hotReloader = riotHotReload
+
+        riot.mount("*")
+        /*]]>*/
+      </script>
+    <!-- -->
+    <!-- `webpack -w` reloads with browsersync, but then tags lose state -->
+    <!--
+      <script src="main.js"></script>
+    -->
+    <script src="browser-sync/browser-sync-client.js"></script>
+  </body>
+</html>

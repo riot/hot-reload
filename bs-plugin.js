@@ -1,7 +1,7 @@
-const PLUGIN_NAME = "riot-hmr"
+var PLUGIN_NAME = "riot-hot-reload"
 
-const fs = require("fs")
-const path = require("path")
+var fs = require("fs")
+var path = require("path")
 
 module.exports.plugin = function (_a, b) {
   b.events.on("file:changed", function (c) {
