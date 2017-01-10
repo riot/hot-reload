@@ -1,3 +1,5 @@
+# THIS IS A WORK IN PROGRESS AND IT WILL BE RELEASED SOON
+
 # Riot Hot Reload Plugin for Browsersync
 
 Watch Riot tag files, when recompiled they reload without losing their state
