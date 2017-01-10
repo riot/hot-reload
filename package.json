@@ -1,0 +1,27 @@
+{
+  "author": "Peter T Bosse II <ptb@ioutime.com> (http://ptb2.me)",
+  "bugs": {
+    "url": "https://github.com/ptb/riot-hot-reload/issues"
+  },
+  "dependencies": {
+    "riot": "^3.0.5"
+  },
+  "description": "Riot Hot Reload",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "tag-loader": "^0.3.0",
+    "webpack": "^2.2.0-rc.1"
+  },
+  "homepage": "https://github.com/ptb/riot-hot-reload#readme",
+  "license": "MIT",
+  "main": "bs-plugin.js",
+  "name": "riot-hot-reload",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ptb/riot-hot-reload.git"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "version": "1.0.0"
+}
