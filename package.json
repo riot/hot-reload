@@ -30,8 +30,8 @@
     "url": "git://github.com/riot/hot-reload.git"
   },
   "scripts": {
-    "lint": "eslint lib",
-    "build": "rollup -c",
+    "lint": "node_modules/.bin/eslint lib",
+    "build": "node_modules/.bin/rollup -c",
     "test": "npm run lint && node test/ | tap-spec",
     "prepublish": "npm run build && npm run test"
   },
