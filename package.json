@@ -1,27 +1,32 @@
 {
-  "author": "Peter T Bosse II <ptb@ioutime.com> (http://ptb2.me)",
+  "author": "Riot maintainers team + smart people from all over the world",
+  "contributors": [
+    "Gianluca Guarini https://github.com/GianlucaGuarini",
+    "Grant Marvin     https://github.com/rogueg"
+  ],
   "bugs": {
-    "url": "https://github.com/ptb/riot-hot-reload/issues"
+    "url": "https://github.com/riot/hot-reload/issues"
   },
-  "dependencies": {
-    "riot": "^3.0.5"
-  },
-  "description": "Riot Hot Reload",
+  "dependencies": {},
+  "description": "Riot Hot Reload Api",
   "devDependencies": {
-    "browser-sync": "^2.18.5",
-    "tag-loader": "^0.3.0",
-    "webpack": "^2.2.0-rc.1"
+    "buble": "^0.15.2",
+    "eslint": "^3.13.1",
+    "rollup": "^0.41.4"
   },
-  "homepage": "https://github.com/ptb/riot-hot-reload#readme",
+  "peerDependencies": {
+    "riot": "^3.0.7"
+  },
+  "homepage": "https://github.com/riot/hot-reload#readme",
   "license": "MIT",
-  "main": "bs-plugin.js",
+  "main": "index.js",
   "name": "riot-hot-reload",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ptb/riot-hot-reload.git"
+    "url": "git://github.com/riot/hot-reload.git"
   },
   "scripts": {
-    "start": "node index.js"
+    "lint": "eslint lib"
   },
-  "version": "1.0.0"
+  "version": "0.0.1"
 }
