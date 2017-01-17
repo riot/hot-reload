@@ -31,6 +31,7 @@ test('riot.reload keeps the tags state', function (t) {
     const tag = riot.reload('timer')[0]
 
     t.equal(tag.count, 2)
+    tag.unmount()
     t.end()
   }, 210)
 

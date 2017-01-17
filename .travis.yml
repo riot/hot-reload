@@ -9,6 +9,9 @@ branches:
 
 sudo: false
 
+install:
+  - npm install riot
+
 cache:
   directories:
     - node_modules
