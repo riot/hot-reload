@@ -1,4 +1,0 @@
-ratings:
-  paths:
-  - "lib/**.js"
-  - "test/**.js"
