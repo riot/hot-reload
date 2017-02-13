@@ -18,8 +18,8 @@ function reload(name) {
     oldTag.unmount(true); // detach the old tag
 
     // reset the innerHTML and attributes to how they were before mount
-    el.innerHTML = oldTag._internal.innerHTML;
-    (oldTag._internal.origAttrs || []).map(function(attr) {
+    el.innerHTML = oldTag.__.innerHTML;
+    (oldTag.__.origAttrs || []).map(function(attr) {
       el.setAttribute(attr.name, attr.value);
     });
 
