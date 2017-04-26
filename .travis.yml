@@ -12,9 +12,5 @@ sudo: false
 install:
   - npm i && npm install riot
 
-cache:
-  directories:
-    - node_modules
-
 notifications:
     email: false
