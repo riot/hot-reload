@@ -1,7 +1,7 @@
 # Riot hot reload api
 
 [![Build Status][travis-image]][travis-url]
-[![Issue Count][codeclimate-image]][codeclimate-url]
+<!-- [![Issue Count][codeclimate-image]][codeclimate-url] -->
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![MIT License][license-image]][license-url]

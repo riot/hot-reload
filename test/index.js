@@ -5,7 +5,6 @@ require('jsdom-global')()
 
 test('riot.reload exists', function (t) {
   t.ok(hotReload)
-  t.ok(riot.default.reload)
   t.ok(riot.reload)
   t.end()
 })

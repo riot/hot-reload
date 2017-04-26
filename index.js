@@ -18,8 +18,8 @@ function reload(name) {
     oldTag.unmount(true); // detach the old tag
 
     // reset the innerHTML and attributes to how they were before mount
-    el.innerHTML = oldTag._internal.innerHTML;
-    (oldTag._internal.origAttrs || []).map(function(attr) {
+    el.innerHTML = oldTag.__.innerHTML;
+    (oldTag.__.instAttrs || []).map(function(attr) {
       el.setAttribute(attr.name, attr.value);
     });
 
@@ -49,7 +49,8 @@ function reload(name) {
 }
 
 riot.observable(reload);
-riot.reload = riot.default.reload = reload;
+riot.reload = reload;
+if (riot.default) { riot.default.reload = reload; }
 
 exports.reload = reload;
 exports['default'] = reload;
