@@ -35,5 +35,5 @@
     "test": "npm run lint && node test/ | tap-spec",
     "prepublish": "npm run build && npm run test"
   },
-  "version": "0.0.2"
+  "version": "1.0.0"
 }
