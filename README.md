@@ -19,7 +19,11 @@ import 'riot-hot-reload'
 riot.reload('my-component')
 ```
 
+## LivereloadX integration
 
+Need something simple and don't want to use a bundler like Webpack?
+There is a plugins for [LivereloadX](https://github.com/nitoyon/livereloadx) let you get started quickly.
+See https://github.com/manhg/riotjs-livereloadx
 
 [travis-image]:  https://img.shields.io/travis/riot/hot-reload.svg?style=flat-square
 [travis-url]:    https://travis-ci.org/riot/hot-reload
