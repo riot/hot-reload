@@ -9,7 +9,8 @@ describe('core', () => {
   })
 
   it('riot.reload keeps the tags state', (done) => {
-    register('timer', {
+    const component = {
+      name: 'timer',
       tag: {
         state: {
           count: 0
@@ -23,13 +24,15 @@ describe('core', () => {
           clearInterval(this.interval)
         }
       }
-    })
+    }
+
+    register('timer', component)
 
     document.body.innerHTML = '<timer></timer>'
     mount('timer')[0]
 
     setTimeout(function() {
-      const tag = hotReload('timer')[0]
+      const tag = hotReload(component)[0]
 
       expect(tag.state.count).to.be.equal(2)
       tag.unmount()

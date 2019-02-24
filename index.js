@@ -10,13 +10,20 @@
   var ref = riot.__.globals;
   var DOM_COMPONENT_INSTANCE_PROPERTY = ref.DOM_COMPONENT_INSTANCE_PROPERTY;
 
-  function reload(name) {
+  function reload(component) {
+    var name = component.name;
+
+    if (!name) {
+      console.warn('Anonymous components can not be reloaded'); // eslint-disable-line
+      return []
+    }
+
     return $((name + ", [is=" + name + "]")).map(function (el) {
       var oldTag = el[DOM_COMPONENT_INSTANCE_PROPERTY];
 
       oldTag.unmount(true);
       // create the new tag
-      var newTag = riot.mount(el, oldTag.props)[0];
+      var newTag = riot.component(component).mount(el, oldTag.props);
       newTag.update(oldTag.state);
 
       return newTag

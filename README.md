@@ -12,9 +12,9 @@ Api that will extend riot making your tags hot reloadable.
 
 ```js
 import reload from '@riotjs/hot-reload'
-
-// refresh the tags called 'my-component' without losing their state
-reload('my-component')
+import Component from './my-component'
+// refresh all the DOM nodes called 'my-component' without losing their state
+reload(Component)
 ```
 
 

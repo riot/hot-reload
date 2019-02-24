@@ -1,7 +1,7 @@
 import buble from 'rollup-plugin-buble'
 
 export default {
-  entry: 'lib/index.js',
+  entry: 'src/index.js',
   dest: 'index.js',
   moduleName: 'riotHotReload',
   format: 'umd',
