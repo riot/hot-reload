@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 6
+  - 10
 
 branches:
   only:
@@ -10,7 +10,7 @@ branches:
 sudo: false
 
 install:
-  - npm install riot && npm i
+  - npm install riot@4.0.0-alpha.8 && npm i
 
 cache:
   directories:

@@ -1,60 +1,31 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('riot')) :
-	typeof define === 'function' && define.amd ? define(['exports', 'riot'], factory) :
-	(factory((global.riotHotReload = global.riotHotReload || {}),global.riot));
-}(this, (function (exports,riot) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('bianco.query'), require('riot')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'bianco.query', 'riot'], factory) :
+  (factory((global.riotHotReload = {}),global.$,global.riot));
+}(this, (function (exports,$,riot) { 'use strict';
 
-var nonState = 'isMounted opts'.split(' ');
+  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
+  riot = riot && riot.hasOwnProperty('default') ? riot['default'] : riot;
 
-function reload(name) {
-  riot.util.styleManager.inject();
+  var ref = riot.__.globals;
+  var DOM_COMPONENT_INSTANCE_PROPERTY = ref.DOM_COMPONENT_INSTANCE_PROPERTY;
 
-  var elems = document.querySelectorAll((name + ", [data-is=" + name + "]"));
-  var tags = [];
+  function reload(name) {
+    return $((name + ", [is=" + name + "]")).map(function (el) {
+      var oldTag = el[DOM_COMPONENT_INSTANCE_PROPERTY];
 
-  for (var i = 0; i < elems.length; i++) {
-    var el = elems[i], oldTag = el._tag, v;
-    reload.trigger('before-unmount', oldTag);
-    oldTag.unmount(true); // detach the old tag
+      oldTag.unmount(true);
+      // create the new tag
+      var newTag = riot.mount(el, oldTag.props)[0];
+      newTag.update(oldTag.state);
 
-    // reset the innerHTML and attributes to how they were before mount
-    el.innerHTML = oldTag.__.innerHTML;
-    (oldTag.__.instAttrs || []).map(function(attr) {
-      el.setAttribute(attr.name, attr.value);
-    });
-
-    // copy options for creating the new tag
-    var newOpts = {};
-    for(key in oldTag.opts) {
-      newOpts[key] = oldTag.opts[key];
-    }
-    newOpts.parent = oldTag.parent;
-
-    // create the new tag
-    reload.trigger('before-mount', newOpts, oldTag);
-    var newTag = riot.mount(el, newOpts)[0];
-
-    // copy state from the old to new tag
-    for(var key in oldTag) {
-      v = oldTag[key];
-      if (~nonState.indexOf(key)) { continue }
-      newTag[key] = v;
-    }
-    newTag.update();
-    tags.push(newTag);
-    reload.trigger('after-mount', newTag, oldTag);
+      return newTag
+    })
   }
 
-  return tags
-}
+  exports.reload = reload;
+  exports.default = reload;
 
-riot.observable(reload);
-riot.reload = reload;
-if (riot.default) { riot.default.reload = reload; }
-
-exports.reload = reload;
-exports['default'] = reload;
-
-Object.defineProperty(exports, '__esModule', { value: true });
+  Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
