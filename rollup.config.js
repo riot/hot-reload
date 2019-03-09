@@ -1,11 +1,10 @@
-import buble from 'rollup-plugin-buble'
-
 export default {
-  entry: 'src/index.js',
-  dest: 'index.js',
-  moduleName: 'riotHotReload',
-  format: 'umd',
+  input:  'src/index.js',
+  output: {
+    file: 'index.js',
+    format: 'umd',
+    name: 'riotHotReload'
+  },
   interop: false,
-  external: ['riot'],
-  plugins: [buble()]
+  external: ['riot']
 }

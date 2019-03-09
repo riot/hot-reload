@@ -11,7 +11,7 @@ describe('core', () => {
   it('riot.reload keeps the tags state', (done) => {
     const component = {
       name: 'timer',
-      tag: {
+      exports: {
         state: {
           count: 0
         },

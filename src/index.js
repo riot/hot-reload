@@ -16,7 +16,7 @@ export function reload(component) {
 
     oldTag.unmount(true)
     // create the new tag
-    const newTag = riot.component(component).mount(el, oldTag.props)
+    const newTag = riot.component(component)(el, oldTag.props)
     newTag.update(oldTag.state)
 
     return newTag
