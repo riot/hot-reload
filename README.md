@@ -8,6 +8,10 @@
 
 Api that will extend riot making your tags hot reloadable.
 
+## Important
+
+If you are using Riot.js < 4.0.0 please check the [v3 branch](https://github.com/riot/hot-reload/tree/v3)
+
 ## Usage
 
 ```js
