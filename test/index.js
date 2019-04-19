@@ -1,4 +1,4 @@
-import {mount, register} from 'riot'
+import {component} from 'riot'
 import {expect} from 'chai'
 import hotReload from '../'
 import jsDOMGlobal from 'jsdom-global'
@@ -9,7 +9,7 @@ describe('core', () => {
   })
 
   it('riot.reload keeps the tags state', (done) => {
-    const component = {
+    const api = {
       name: 'timer',
       exports: {
         state: {
@@ -26,16 +26,16 @@ describe('core', () => {
       }
     }
 
-    register('timer', component)
+    const div = document.createElement('div')
+    document.body.appendChild(div)
 
-    document.body.innerHTML = '<timer></timer>'
-    mount('timer')[0]
+    component(api)(div)
 
     setTimeout(function() {
-      const tag = hotReload(component)[0]
+      const el = hotReload(api)[0]
 
-      expect(tag.state.count).to.be.equal(2)
-      tag.unmount()
+      expect(el.state.count).to.be.equal(2)
+      el.unmount()
       done()
     }, 210)
   })

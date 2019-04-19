@@ -9,13 +9,13 @@
   "description": "Riot Hot Reload Api",
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^5.15.1",
+    "eslint": "^5.16.0",
     "eslint-config-riot": "^2.0.0",
-    "esm": "^3.2.14",
-    "jsdom": "^13.2.0",
+    "esm": "^3.2.22",
+    "jsdom": "^14.0.0",
     "jsdom-global": "3.0.2",
-    "mocha": "^6.0.2",
-    "rollup": "^1.6.0"
+    "mocha": "^6.1.4",
+    "rollup": "^1.10.1"
   },
   "peerDependencies": {
     "riot": "riot@4.0.0-beta.1"

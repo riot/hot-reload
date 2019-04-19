@@ -29,8 +29,8 @@
     })
   }
 
-  exports.reload = reload;
   exports.default = reload;
+  exports.reload = reload;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
