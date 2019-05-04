@@ -1,10 +1,11 @@
+import {__, component} from 'riot'
 import $ from 'bianco.query'
-import riot from 'riot'
 
-const { DOM_COMPONENT_INSTANCE_PROPERTY } = riot.__.globals
+const { cssManager } = __
+const { DOM_COMPONENT_INSTANCE_PROPERTY } = __.globals
 
-export function reload(component) {
-  const {name} = component
+export function reload(componentAPI) {
+  const {name} = componentAPI
 
   if (!name) {
     console.warn('Anonymous components can not be reloaded') // eslint-disable-line
@@ -14,9 +15,13 @@ export function reload(component) {
   return $(`${name}, [is=${name}]`).map(el => {
     const oldTag = el[DOM_COMPONENT_INSTANCE_PROPERTY]
 
+    // remove the tag template from the DOM
     oldTag.unmount(true)
+    // delete the old css from the css manager
+    cssManager.remove(name)
+
     // create the new tag
-    const newTag = riot.component(component)(el, oldTag.props)
+    const newTag = component(componentAPI)(el, oldTag.props)
     newTag.update(oldTag.state)
 
     return newTag
