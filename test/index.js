@@ -1,4 +1,4 @@
-import {component, __} from 'riot'
+import {__, component} from 'riot'
 import {expect} from 'chai'
 import hotReload from '../'
 import jsDOMGlobal from 'jsdom-global'

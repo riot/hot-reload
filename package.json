@@ -11,14 +11,14 @@
     "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-riot": "^2.0.0",
-    "esm": "^3.2.22",
-    "jsdom": "^15.0.0",
+    "esm": "^3.2.25",
+    "jsdom": "^15.1.1",
     "jsdom-global": "3.0.2",
     "mocha": "^6.1.4",
-    "rollup": "^1.11.2"
+    "rollup": "^1.12.5"
   },
   "peerDependencies": {
-    "riot": "riot@4.0.0-rc.7"
+    "riot": "^4.0.0"
   },
   "homepage": "https://github.com/riot/hot-reload#readme",
   "license": "MIT",
@@ -29,12 +29,12 @@
     "url": "git://github.com/riot/hot-reload.git"
   },
   "scripts": {
-    "prepare": "npm i riot@4.0.0-rc.7 --no-save",
+    "prepare": "npm i riot --no-save",
     "lint": "eslint src test",
     "build": "rollup -c",
     "pretest": "npm run build",
     "test": "npm run lint && mocha -r esm test",
     "prepublishOnly": "npm run build && npm run test"
   },
-  "version": "4.0.0-rc.1"
+  "version": "4.0.0"
 }
