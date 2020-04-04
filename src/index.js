@@ -15,6 +15,9 @@ export function reload(componentAPI) {
   return $(`${name}, [is=${name}]`).map(el => {
     const oldTag = el[DOM_COMPONENT_INSTANCE_PROPERTY]
 
+    // early return in case there is no riot instance found
+    if (!oldTag) return
+
     // remove the tag template from the DOM
     oldTag.unmount(true)
     // delete the old css from the css manager

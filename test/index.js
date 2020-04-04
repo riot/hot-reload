@@ -60,4 +60,15 @@ describe('core', () => {
 
     expect(__.cssManager.CSS_BY_NAME.get('css-demo')).to.match(/rgb\(0, 0, 0\)/)
   })
+
+  it('components not compatible with riot will be ignored', () => {
+    const div = document.createElement('div')
+    document.body.appendChild(div)
+
+    div.setAttribute('is', 'not-riot')
+
+    expect(() => hotReload({
+      name: 'not-riot'
+    })).to.not.throw()
+  })
 })
