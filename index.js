@@ -1,10 +1,12 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('riot'), require('bianco.query')) :
   typeof define === 'function' && define.amd ? define(['exports', 'riot', 'bianco.query'], factory) :
-  (global = global || self, factory(global.riotHotReload = {}, global.riot, global.$));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.riotHotReload = {}, global.riot, global.$));
 }(this, (function (exports, riot, $) { 'use strict';
 
-  $ = $ && Object.prototype.hasOwnProperty.call($, 'default') ? $['default'] : $;
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var $__default = /*#__PURE__*/_interopDefaultLegacy($);
 
   const { cssManager } = riot.__;
   const { DOM_COMPONENT_INSTANCE_PROPERTY } = riot.__.globals;
@@ -17,7 +19,7 @@
       return []
     }
 
-    return $(`${name}, [is=${name}]`).map(el => {
+    return $__default['default'](`${name}, [is=${name}]`).map(el => {
       const oldTag = el[DOM_COMPONENT_INSTANCE_PROPERTY];
 
       // early return in case there is no riot instance found
