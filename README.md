@@ -1,7 +1,6 @@
 # Riot hot reload api
 
-[![Build Status][travis-image]][travis-url]
-<!-- [![Issue Count][codeclimate-image]][codeclimate-url] -->
+[![Build Status][ci-image]][ci-url]
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![MIT License][license-image]][license-url]
@@ -23,8 +22,8 @@ reload(Component)
 
 
 
-[travis-image]:  https://img.shields.io/travis/riot/hot-reload.svg?style=flat-square
-[travis-url]:    https://travis-ci.org/riot/hot-reload
+[ci-image]:https://img.shields.io/github/workflow/status/riot/hot-reload/test?style=flat-square
+[ci-url]:https://github.com/riot/hot-reload/actions
 [license-image]: https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
 [license-url]:   LICENSE.txt
 [npm-version-image]:   https://img.shields.io/npm/v/@riotjs/hot-reload.svg?style=flat-square
