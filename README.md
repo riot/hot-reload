@@ -1,5 +1,7 @@
 # Riot hot reload api
 
+[![Riot.js hot reload logo](https://raw.githubusercontent.com/riot/branding/main/hot-reload/hot-reload-horizontal.svg)](https://github.com/riot/hot-reload/)
+
 [![Build Status][ci-image]][ci-url]
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
