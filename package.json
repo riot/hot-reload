@@ -9,17 +9,17 @@
   "description": "Riot Hot Reload Api",
   "devDependencies": {
     "chai": "^4.3.6",
-    "eslint": "^8.19.0",
+    "eslint": "^8.22.0",
     "eslint-config-riot": "^3.0.0",
     "esm": "^3.2.25",
     "jsdom": "^20.0.0",
     "jsdom-global": "3.0.2",
     "mocha": "^8.4.0",
-    "riot": "^6.1.2",
-    "rollup": "^2.76.0"
+    "riot": "^7.0.3",
+    "rollup": "^2.78.0"
   },
   "peerDependencies": {
-    "riot": "^6.1.2"
+    "riot": "^6.0.0 || ^7.0.0"
   },
   "homepage": "https://github.com/riot/hot-reload#readme",
   "license": "MIT",
