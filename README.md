@@ -24,7 +24,7 @@ reload(Component)
 
 
 
-[ci-image]:https://img.shields.io/github/workflow/status/riot/hot-reload/test?style=flat-square
+[ci-image]:https://img.shields.io/github/actions/workflow/status/riot/hot-reload/test.yml?style=flat-square
 [ci-url]:https://github.com/riot/hot-reload/actions
 [license-image]: https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
 [license-url]:   LICENSE.txt
