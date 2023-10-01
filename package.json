@@ -15,11 +15,11 @@
     "jsdom": "^20.0.0",
     "jsdom-global": "3.0.2",
     "mocha": "^8.4.0",
-    "riot": "^7.0.3",
+    "riot": "^9.0.4",
     "rollup": "^2.78.0"
   },
   "peerDependencies": {
-    "riot": "^6.0.0 || ^7.0.0"
+    "riot": "^6.0.0 || ^7.0.0 || ^9.0.0"
   },
   "homepage": "https://github.com/riot/hot-reload#readme",
   "license": "MIT",
