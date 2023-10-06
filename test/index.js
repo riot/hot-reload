@@ -1,6 +1,6 @@
-import {__, component} from 'riot'
-import {expect} from 'chai'
-import hotReload from '../'
+import { __, component } from 'riot'
+import { expect } from 'chai'
+import hotReload from '../src/index.js'
 import jsDOMGlobal from 'jsdom-global'
 
 describe('core', () => {
@@ -13,17 +13,17 @@ describe('core', () => {
       name: 'timer',
       exports: {
         state: {
-          count: 0
+          count: 0,
         },
         onBeforeMount() {
           this.interval = setInterval(() => {
-            this.state.count ++
+            this.state.count++
           }, 100)
         },
         onUnmounted() {
           clearInterval(this.interval)
-        }
-      }
+        },
+      },
     }
 
     const div = document.createElement('div')
@@ -31,7 +31,7 @@ describe('core', () => {
 
     component(api)(div)
 
-    setTimeout(function() {
+    setTimeout(function () {
       const el = hotReload(api)[0]
 
       expect(el.state.count).to.be.equal(2)
@@ -43,7 +43,7 @@ describe('core', () => {
   it('riot.reload will reload the css properly', () => {
     const api = {
       name: 'css-demo',
-      css: ':host { color: rgb(255, 255, 255); }'
+      css: ':host { color: rgb(255, 255, 255); }',
     }
 
     const div = document.createElement('div')
@@ -51,11 +51,13 @@ describe('core', () => {
 
     component(api)(div)
 
-    expect(__.cssManager.CSS_BY_NAME.get('css-demo')).to.match(/rgb\(255, 255, 255\)/)
+    expect(__.cssManager.CSS_BY_NAME.get('css-demo')).to.match(
+      /rgb\(255, 255, 255\)/,
+    )
 
     hotReload({
       name: 'css-demo',
-      css: ':host { color: rgb(0, 0, 0); }'
+      css: ':host { color: rgb(0, 0, 0); }',
     })
 
     expect(__.cssManager.CSS_BY_NAME.get('css-demo')).to.match(/rgb\(0, 0, 0\)/)
@@ -67,8 +69,10 @@ describe('core', () => {
 
     div.setAttribute('is', 'not-riot')
 
-    expect(() => hotReload({
-      name: 'not-riot'
-    })).to.not.throw()
+    expect(() =>
+      hotReload({
+        name: 'not-riot',
+      }),
+    ).to.not.throw()
   })
 })

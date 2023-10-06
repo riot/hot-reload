@@ -1,18 +1,18 @@
-import {__, component} from 'riot'
+import { __, component } from 'riot'
 import $ from 'bianco.query'
 
 const { cssManager } = __
 const { DOM_COMPONENT_INSTANCE_PROPERTY } = __.globals
 
-export function reload(componentAPI) {
-  const {name} = componentAPI
+export default function reload(componentAPI) {
+  const { name } = componentAPI
 
   if (!name) {
     console.warn('Anonymous components can not be reloaded') // eslint-disable-line
     return []
   }
 
-  return $(`${name}, [is=${name}]`).map(el => {
+  return $(`${name}, [is=${name}]`).map((el) => {
     const oldTag = el[DOM_COMPONENT_INSTANCE_PROPERTY]
 
     // early return in case there is no riot instance found
@@ -30,5 +30,3 @@ export function reload(componentAPI) {
     return newTag
   })
 }
-
-export default reload
