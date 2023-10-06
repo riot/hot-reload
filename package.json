@@ -32,7 +32,10 @@
     "import": "./index.js",
     "require": "./index.cjs"
   },
-  "files": ["index.cjs", "index.js"],
+  "files": [
+    "index.cjs",
+    "index.js"
+  ],
   "name": "@riotjs/hot-reload",
   "repository": {
     "type": "git",
@@ -45,5 +48,5 @@
     "test": "npm run lint && mocha test",
     "prepublishOnly": "npm run build && npm run test"
   },
-  "version": "9.0.0"
+  "version": "9.0.1"
 }
