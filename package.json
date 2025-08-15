@@ -9,19 +9,19 @@
   "description": "Riot Hot Reload Api",
   "devDependencies": {
     "@riotjs/prettier-config": "^1.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.2",
-    "chai": "^4.3.10",
-    "eslint": "^8.50.0",
-    "eslint-config-riot": "^4.1.1",
-    "jsdom": "^22.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "chai": "^5.2.1",
+    "eslint": "^9.33.0",
+    "eslint-config-riot": "^5.0.2",
+    "jsdom": "^26.1.0",
     "jsdom-global": "3.0.2",
-    "mocha": "^10.2.0",
-    "prettier": "^3.0.3",
-    "riot": "^9.0.4",
-    "rollup": "^4.0.2"
+    "mocha": "^11.7.1",
+    "prettier": "^3.6.2",
+    "riot": "10.0.0-rc.1",
+    "rollup": "^4.46.2"
   },
   "peerDependencies": {
-    "riot": "^6.0.0 || ^7.0.0 || ^9.0.0"
+    "riot": "^6.0.0 || ^7.0.0 || ^9.0.0 || ^10.0.0"
   },
   "homepage": "https://github.com/riot/hot-reload#readme",
   "license": "MIT",
@@ -42,7 +42,6 @@
     "url": "git://github.com/riot/hot-reload.git"
   },
   "scripts": {
-    "prepare": "npm i riot --no-save",
     "lint": "eslint src test",
     "build": "rollup -c",
     "test": "npm run lint && mocha test",

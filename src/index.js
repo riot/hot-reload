@@ -8,7 +8,7 @@ export default function reload(componentAPI) {
   const { name } = componentAPI
 
   if (!name) {
-    console.warn('Anonymous components can not be reloaded') // eslint-disable-line
+    console.warn('Anonymous components can not be reloaded') 
     return []
   }
 

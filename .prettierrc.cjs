@@ -1,1 +1,2 @@
-module.exports = require('@riotjs/prettier-config')
+import config from '@riotjs/prettier-config'
+export default config
