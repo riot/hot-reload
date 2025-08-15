@@ -7,7 +7,6 @@
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![Code Quality][qlty-image]][qlty-url]
 [![MIT License][license-image]][license-url]
-[![MIT License][license-image]][license-url]
 
 Api that will extend riot making your tags hot reloadable.
 
